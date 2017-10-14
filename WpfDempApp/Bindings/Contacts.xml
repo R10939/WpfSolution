@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Contacts>
+  
+  <Contact>
+    <name>Tintin</name>
+    <tel>265464</tel>
+    <email>tinit@gmail.com</email>
+  </Contact>
+
+  <Contact>
+    <name>Tintin</name>
+    <tel>265464</tel>
+    <email>tinit@t.com</email>
+  </Contact>
+
+  <Contact>
+    <name>Snowy</name>
+    <tel>123156</tel>
+    <email>snowy@s.com</email>
+  </Contact>
+
+  <Contact>
+    <name>Haddock</name>
+    <tel>373737</tel>
+    <email>Haddock@h.com</email>
+  </Contact>
+
+  <Contact>
+    <name>Thomson</name>
+    <tel>8468979</tel>
+    <email>Thomson@t.com</email>
+  </Contact>
+
+
+
+</Contacts>

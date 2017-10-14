@@ -1,0 +1,93 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfDempApp.Asset">
+
+    <RadialGradientBrush x:Key="RadialBrush1" GradientOrigin=".5,.5" Center=".5,.5">
+        <GradientStop Color="Cyan" Offset="0"/>
+        <GradientStop Color="Blue" Offset="2"/>
+    </RadialGradientBrush>
+
+    <LinearGradientBrush x:Key= "LinearBrush2" StartPoint="0,0.5" EndPoint="1,0.5">
+        <GradientStop Color="Orange" Offset="0"/>
+        <GradientStop Color="White" Offset="0.5"/>
+        <GradientStop Color="Green" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="DButtonStyle" TargetType="Button">
+        <Setter Property="FontFamily" Value="Script MT"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint=".5,0" EndPoint="0.5,1">
+                    <GradientStop Color="Cyan" Offset="0"/>
+                    <GradientStop Color="Blue" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate TargetType="Button" x:Key="ElipseButton">
+
+        <Grid>
+            <Ellipse x:Name="MainElipse" StrokeThickness="2"
+                         Height="{TemplateBinding Height}"
+                         Width="{TemplateBinding Width}"
+                        Fill="{TemplateBinding Background}">
+                <Ellipse.Stroke>
+                    <LinearGradientBrush StartPoint=".5,0" EndPoint=".5,1">
+                        <GradientStop Color="Yellow" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+
+            <Ellipse Margin="10">
+                <Ellipse.Fill>
+                    <LinearGradientBrush StartPoint=".5,0" EndPoint=".5,1">
+                        <GradientStop Color="Silver" Offset="0"/>
+                        <GradientStop Color="Transparent" Offset="0.25"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <ContentPresenter Content="{TemplateBinding Content}"
+                                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Opacity" Value="0.25" TargetName="MainElipse"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <Style TargetType="TextBlock" x:Key="DisplayTextBlock">
+        <Setter Property="TextAlignment" Value="Left"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="Padding" Value="0,4,0,0"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="RDisplayTextBlock">
+        <Setter Property="TextAlignment" Value="Right"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="Padding" Value="0,4,0,0"/>
+    </Style>
+
+    <Style TargetType="Border" x:Key="CoralBorder">
+        <Setter Property="BorderBrush" Value="Coral"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style TargetType="Border" x:Key="BlackBorder">
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    
+</ResourceDictionary>

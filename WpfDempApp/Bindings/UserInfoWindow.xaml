@@ -1,0 +1,77 @@
+﻿<Window x:Class="WpfDempApp.Bindings.UserInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDempApp.Bindings"
+        mc:Ignorable="d"
+        Title="UserInfoWindow" Height="500" Width="610">
+    
+    <Grid>
+
+        <Grid.Resources>
+            <DataTemplate x:Key="UserTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding UserName}"
+                        Style="{StaticResource DisplayTextBlock}"/>
+                    <TextBlock Text="{Binding Age}"
+                        Style="{StaticResource DisplayTextBlock}"/>
+                   <TextBlock Text="{Binding FavColor}"
+                        Style="{StaticResource DisplayTextBlock}"/>
+                    <Rectangle Height="25" Width="50" Fill="{Binding FavColor}"/>
+                </StackPanel>
+            </DataTemplate>    
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30" Margin="0,20,0,0">
+                <TextBlock Height="25" Width="80" Margin="100,0,0,0">User Name :</TextBlock>
+                <TextBox x:Name="UserNameTextbox"  Height="25" Width="200" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30" Margin="0,0,0,0">
+                <TextBlock Height="25" Width="80" Margin="100,0,0,0">Age :</TextBlock>
+                <TextBox x:Name="AgeTextbox" Height="25" Width="200" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30" Margin="0,0,0,0">
+                <TextBlock Height="25" Width="80" Margin="100,0,0,0">Fav Color :</TextBlock>
+                <TextBox x:Name="FavColorTextbox" Height="25" Width="200" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30" Margin="0,5,0,0">
+                <Button x:Name="AddNewUserButton" Height="25" Width="150" Margin="140,0,0,0" Content="Add New User" Click="AddNewUserButton_Click"> </Button>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
+                <ListBox Margin="10,0,0,0" Height="170" Width="570" 
+                         ItemsSource="{Binding}" ItemTemplate="{StaticResource UserTemplate}" 
+                         IsSynchronizedWithCurrentItem="True">
+                </ListBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <TextBlock Margin="30,25,0,0"> User Name : </TextBlock>
+                <TextBox x:Name="EUserNameTextBox" Text="{Binding UserName}" Margin="10,25,0,0" Width="150"></TextBox>
+                
+                <TextBlock Margin="5,25,0,0"> Age :</TextBlock>
+                <TextBox x:Name="EAgeTextBox" Text="{Binding Age}" Margin="10,25,0,0" Width="70"></TextBox>
+                
+                <TextBlock Margin="5,25,0,0"> Fav Color :</TextBlock>
+                <TextBox x:Name="EFavColorTextBox" Text="{Binding FavColor}" Margin="10,25,0,0" Width="100"></TextBox>                
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
